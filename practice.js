@@ -28,7 +28,9 @@
   Return the result of invoking the callback.
 */
 
-// Code Here
+const first = (array, callback) => {
+  return callback(array[0])
+}
 
 // Do not edit the code below.
 const names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -48,7 +50,10 @@ first(names, function (firstName) {
   Return the result of invoking the callback.
 */
 
-//Code Here
+const last = (array, callback) => {
+  const lastItem = array[array.length - 1]
+  return callback(lastItem)
+}
 
 // Do not edit the code below.
 // Your function is called here
@@ -65,7 +70,9 @@ last(names, (lastName) => {
   Invoke the callback, passing in the product of the two numbers multiplied as the argument.
 */
 
-//Code Here
+const multiply = (num1, num2, callback) => {
+  return callback(num1 * num2)
+}
 
 // Do not edit the code below.
 // Your function is called here
@@ -83,7 +90,13 @@ multiply(4, 3, function (answer) {
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-//Code Here
+const contains = (array, name1, callback) => {
+  if(array.includes(name1)) {
+    return callback(true)
+  } else {
+    return callback(false)
+  }
+}
 
 // Do not edit the code below.
 // Your function is called here
@@ -103,7 +116,11 @@ contains(names, 'Colt', (result) => {
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-//Code Here
+const each = (array, callback) => {
+  array.forEach((name1) => {
+    callback(name1, array.indexOf(name1))
+  })
+}
 
 // Do not edit the code below.
 // Your function is called here
@@ -120,7 +137,13 @@ each(names, (item, index) => {
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
-// Code here
+const getUserById = (objArray, id, callback) => {
+  objArray.forEach((user) => {
+    if(user.id === id) {
+      return callback(user)
+    }
+  })
+}
 
 // Do not edit the code below.
 const users = [
