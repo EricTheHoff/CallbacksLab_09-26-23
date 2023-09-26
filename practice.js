@@ -140,7 +140,7 @@ each(names, (item, index) => {
 const getUserById = (objArray, id, callback) => {
   objArray.forEach((user) => {
     if(user.id === id) {
-      return callback(user)
+      callback(user)
     }
   })
 }
@@ -193,7 +193,9 @@ getUserById(users, '16t', (user) => {
 // Make sure to use an arrow function.
 // You should not use a for loop, but should use the filter method instead.
 
-// REPLACE THIS WITH YOUR CODE
+const evens = (array) => {
+  return array.filter((even) => even % 2 === 0)
+}
 
 /// /////// PROBLEM 8 //////////
 
@@ -205,7 +207,14 @@ getUserById(users, '16t', (user) => {
 //
 // Make sure to use an arrow function combined with the filter method (not a for loop).
 
-// REPLACE THIS WITH YOUR CODE
+// function startWithLetterA (array) {
+//   let filteredArray = array.filter((string) => {
+//     string.toUpperCase().startsWith('A')
+//   })
+//   return filteredArray
+// }
+
+const startWithLetterA = array => array.filter(value => value.toUpperCase().startsWith('A'))
 
 /// /////// PROBLEM 9 //////////
 
@@ -215,7 +224,12 @@ getUserById(users, '16t', (user) => {
 //
 // Make sure to use arrow functions combined with the map method.
 
-// REPLACE THIS WITH YOUR CODE
+const formalGreeting = (array) => {
+  const helloName = array.map((name1) => {
+    "Hello, " + name1
+  })
+  return helloName
+}
 
 /// /////// PROBLEM 10 //////////
 
@@ -225,7 +239,11 @@ getUserById(users, '16t', (user) => {
 // Remember that by default, JavaScript sorts by converting all items to strings. So you
 // will need to provide a compare function.
 
-// REPLACE THIS WITH YOUR CODE
+const sortNumbers = (array) => {
+  array.sort((a, b) => {
+    return b - a
+  })
+}
 
 /// /////// PROBLEM 11 //////////
 
